@@ -1,0 +1,1 @@
+function getAjaxOverlay(){return null!==window.overlaySelector?$(window.overlaySelector):$defaultOverlay}var $document=$(document),$defaultOverlay=$(".ajax-overlay");$(document).ajaxStart(function(a){getAjaxOverlay().show()}),$(document).ajaxStop(function(){getAjaxOverlay().hide(),window.overlaySelector=null});

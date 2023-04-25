@@ -1,0 +1,228 @@
+@import "core/variables";
+
+// // .btn-group,
+.form-filter {
+  select {
+    display: inline;
+    width: auto;
+  }
+  .selectize-control {
+    display: inline-block;
+  }
+}
+
+.form-filter {
+  // float: left;
+}
+
+.actions {
+  margin-bottom: 20px;
+  .btn-group {
+    padding-top: 7px;
+    float: left;
+    margin-right: 20px;
+  }
+  .form__text {
+    width: auto;
+  }
+}
+
+.assets-list .asset-actions {
+  padding-left: 15px;
+}
+
+.asset-items {
+  // margin-bottom: 20px;
+  // background: $gray-0;
+  // padding: 20px;
+  // // box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+  // border: 1px solid #e1e1e1;
+  .grid__item {
+    margin-bottom: 20px;
+  }
+}
+
+.preview {
+  position: relative;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+  // margin-bottom: 20px;
+  &.is-addable {
+    cursor: pointer;
+  }
+  &.is-selected {
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.25);
+  }
+}
+
+.preview__checkbox {
+  display: block;
+  padding: 1px 5px 3px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border: 1px solid $gray-0;
+}
+.preview__image-container {
+  position: relative;
+  padding-top: 75%;
+}
+
+.preview__image {
+  background: #fff;
+  border-radius: 1px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  overflow: hidden;
+  img {
+    float: none;
+    margin: 0;
+    vertical-align: middle;
+    max-height: 100%;
+    max-width: 100%;
+    .preview--folder & {
+      padding: 20px;
+    }
+  }
+}
+
+.preview__name-container {
+  height: 37px;
+  background: $gray-0;
+  .is-selected & {
+    background: $color-brand-primary;
+    .icon,
+    .preview__name {
+      color: #fff;
+    }
+  }
+}
+.preview__handle {
+  float: left;
+  padding: 8px;
+  cursor: move;
+}
+.preview__name {
+  display: block;
+  padding: 8px 8px 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #535455;
+  font-weight: bold;
+  &:hover,
+  &:visited {
+    color: #535455;
+  }
+}
+
+.asset__crop {
+  .tree-spinner {
+    display: none;
+  }
+  &.is-loading {
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(#fff, .75);
+    }
+    .tree-spinner {
+      position: absolute;
+      z-index: 2;
+      top: 45%;
+      right: 0;
+      left: 0;
+      display: block;
+    }
+  }
+}
+
+// .assets-grid {
+//   a {
+//     color: #fff;
+//     text-decoration: none;
+//     font-weight: bold;
+//   }
+//   .checkbox {
+//     display: block;
+//     padding: 1px 5px 3px;
+//     background: #fff;
+//     position: absolute;
+//     top: 0;
+//     left: 10px;
+//     border: 1px solid $gray-0;
+//   }
+//   .icon {
+//     color: #fff;
+//   }
+//   .preview {
+//     position: relative;
+//     padding-bottom: 100%;
+//     background: rgba(41, 128, 185, .1);
+//     &--folder {
+//       background: #f5f6f7;
+//       .image {
+//         padding: 25%;
+//       }
+//     }
+//     a {
+//       display: block;
+//     }
+//     img {
+//       position: absolute;
+//       left: 0;
+//       top: 0;
+//       vertical-align: middle;
+//       float: none;
+//       margin: 0;
+//       object-fit: cover;
+//       transition: border 500ms;
+//     }
+//     &.is-addable {
+//       cursor: pointer;
+//     }
+//     &.is-selected {
+//       img {
+//         border: 2px solid $color-brand-primary;
+//         box-shadow: 0 0 15px $color-brand-primary;
+//       }
+//     }
+//   }
+// }
+// .asset-items {
+//   margin-bottom: 20px;
+// }
+
+// .assets-grid .order-item {
+//   position: relative;
+// }
+
+// .assets-grid .order-handle {
+//   cursor: move;
+// }
+
+// .assets-grid .name {
+//   position: absolute;
+//   right: 10px;
+//   bottom: 0;
+//   left: 10px;
+//   background-color: rgba(0,0,0, .5);
+//   overflow: hidden;
+//   padding: 5px 10px;
+//   height: 30px;
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+//   color: #fff;
+//   font-weight: bold;
+// }
