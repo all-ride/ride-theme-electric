@@ -1,0 +1,24 @@
+{
+    "name": "ride/theme-electric",
+    "description": "Electric theme for the base web application of the Ride framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kristof Serré",
+            "email": "kristof@statik.be"
+        }
+
+    ],
+    "require": {
+        "ride/app-template-smarty": "^1.0.0",
+        "ride/lib-template": "^1.0.0",
+        "ride/web-template-smarty": "^1.0.0",
+        "ride/web-i18n-expose": "^1.0.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "ride\\library\\template\\theme\\": ["src/"],
+            "ride\\library\\form\\row\\": ["src/"]
+        }
+    }
+}

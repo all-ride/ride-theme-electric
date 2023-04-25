@@ -1,0 +1,4 @@
+{
+    "template.theme": "electric",
+    "template.smarty.plugin.electric": "%path%/src/ride/library/template/smarty/plugin/electric"
+}

@@ -1,0 +1,17 @@
+.label {
+  display: inline-block;
+  padding: 3px 5px;
+  background: $gray-100;
+  color: $white;
+  font-weight: $font-weight-bold;
+  line-height: 1;
+  text-transform: uppercase;
+  @include fsRem(12px);
+  border-radius: 2px;
+
+  @each $type, $color in $notice-colors {
+    &--#{$type} {
+      background: $color;
+    }
+  }
+}

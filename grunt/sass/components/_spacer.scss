@@ -1,0 +1,21 @@
+.spacer {
+  & + & {
+    margin-top: $rh-med;
+  }
+
+  &--border {
+    padding-top: $rh-med;
+    border-top: 1px solid $gray-25;
+  }
+
+  @each $rh, $px in $rhythm {
+    &--#{$rh} {
+      [class*="spacer"] + & {
+        margin-top: $px;
+        &.spacer--border {
+          padding-top: $px;
+        }
+      }
+    }
+  }
+}
