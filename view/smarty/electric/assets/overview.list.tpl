@@ -18,7 +18,7 @@
                             {translate key="label.type.`$type`"}
                         </div>
                     </td>
-                    <td>{date_format('d/m/Y', $item->getDateAdded())}</td>
+                    <td>{date('d/m/Y', $item->getDateAdded())}</td>
                 </tr>
             {/foreach}
         </tbody>
@@ -42,7 +42,7 @@
                             {translate key="label.type.`$type`"}
                         </div>
                     </td>
-                    <td>{date_format('d/m/Y', $item->getDateAdded())}</td>
+                    <td>{date('d/m/Y', $item->getDateAdded())}</td>
                 </tr>
             {/foreach}
         </tbody>
