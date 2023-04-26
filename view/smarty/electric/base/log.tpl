@@ -14,7 +14,7 @@
     <tr>
         <td><a href="{url id="system.log.detail" parameters=["id" => $logSession->getId()]}">{$logSession->getId()}</a></td>
         <td>{$logSession->getClient()}</td>
-        <td>{date_format("%Y-%m-%d %H:%M:%S", $logSession->getDate())}</td>
+        <td>{date("%Y-%m-%d %H:%M:%S", $logSession->getDate())}</td>
         <td>{$logSession->getMicroTime()}</td>
         <td>{$logSession->getTitle()}</td>
     </tr>
