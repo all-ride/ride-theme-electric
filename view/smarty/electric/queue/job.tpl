@@ -18,7 +18,7 @@
         <dt>{translate key="label.queue"}</dt>
         <dd id="job-queue"><a href="{url id="queue.status" parameters=["queue" => $status->getQueue()]}">{$status->getQueue()}</a></dd>
         <dt>{translate key="label.date"}</dt>
-        <dd id="job-date">{date_format("Y-m-d H:i:s", $status->getDateAdded())}</dd>
+        <dd id="job-date">{date("Y-m-d H:i:s", $status->getDateAdded())}</dd>
         <dt>{translate key="label.status"}</dt>
         <dd id="job-status"><span class="label label-{if $statusString == 'error'}danger{elseif $statusString == 'progress'}warning{else}info{/if}">{$statusString}</span></dd>
         <dt>{translate key="label.slot"}</dt>
