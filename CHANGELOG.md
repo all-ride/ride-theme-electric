@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+## [1.0.5] 2023-06-05
+### updated
+- Set container max width to 1400px
 ## [1.0.4] 2023-06-05
 ### Created
 - Added dashboard admin tpl
