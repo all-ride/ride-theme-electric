@@ -496,9 +496,9 @@
 
         <input type="website"
                name="{$widget->getName()}{if $part !== null}[{$part}]{/if}"
-               value="{$widget->getValue($part)|escape}"
+               value="{if $widget->getValue($part)}{$widget->getValue($part)|escape}{/if}"
            {foreach $attributes as $name => $attribute}
-               {$name}="{$attribute|escape}"
+               {$name}="{if $attribute}{$attribute|escape}{/if}"
            {/foreach}
          />
     {/if}
@@ -527,7 +527,7 @@
             {foreach $validator->getOptions() as $option => $value}
                 {if $option == 'minimum'}
                     {$attributes.minlength = $value}
-                {else if $option == 'maximum'}
+                {elseif $option == 'maximum'}
                     {$attributes.maxlength = $value}
                 {/if}
             {/foreach}
@@ -536,7 +536,7 @@
         <input type="password"
                name="{$widget->getName()}{if $part !== null}[{$part}]{/if}"
            {foreach $attributes as $name => $attribute}
-               {$name}="{$attribute|escape}"
+               {$name}="{if $attribute}{$attribute|escape}{/if}"
            {/foreach}
          />
     {/if}
@@ -575,16 +575,16 @@
             {foreach $value as $part => $val}
                 <textarea name="{$widget->getName()}{if $widget->isMultiple() || $part !== null}[{$part}]{/if}"
                    {foreach $attributes as $name => $attribute}
-                       {$name}="{$attribute|escape}"
+                       {$name}="{if $attribute}{$attribute|escape}{/if}"
                    {/foreach}
-                 >{$val|escape}</textarea>
+                 >{if $val}{$val|escape}{/if}</textarea>
              {/foreach}
         {else}
             <textarea name="{$widget->getName()}{if $widget->isMultiple() || $part !== null}[{$part}]{/if}"
                {foreach $attributes as $name => $attribute}
-                   {$name}="{$attribute|escape}"
+                   {$name}="{if $attribute}{$attribute|escape}{/if}"
                {/foreach}
-             >{$widget->getValue($part)|escape}</textarea>
+             >{if $widget->getValue($part)}{$widget->getValue($part)|escape}{/if}</textarea>
         {/if}
     {/if}
 {/function}
@@ -617,7 +617,7 @@
             {foreach $validator->getOptions() as $option => $value}
                 {if $option == 'minimum'}
                     {$attributes.minlength = $value}
-                {else if $option == 'maximum'}
+                {elseif $option == 'maximum'}
                     {$attributes.maxlength = $value}
                 {/if}
             {/foreach}
@@ -625,9 +625,9 @@
 
         <textarea name="{$widget->getName()}{if $part !== null}[{$part}]{/if}"
            {foreach $attributes as $name => $attribute}
-               {$name}="{$attribute|escape}"
+               {$name}="{if $attribute}{$attribute|escape}{/if}"
            {/foreach}
-         >{$widget->getValue($part)|escape}</textarea>
+         >{if $widget->getValue($part)}{$widget->getValue($part)|escape}{/if}</textarea>
     {/if}
 {/function}
 
@@ -675,9 +675,9 @@
         <input type="hidden"
                name="{$widget->getName()}"
                data-name="{$safeName}"
-               value="{$value|escape}"
+               value="{if $value}{$value|escape}{/if}"
            {foreach $attributes as $name => $attribute}
-               {$name}="{$attribute|escape}"
+               {$name}="{if $attribute}{$attribute|escape}{/if}"
            {/foreach}
          />
 
@@ -759,7 +759,7 @@
                        {if $name == 'id'}
                             {$attribute = "`$attribute`-`$part`"}
                        {/if}
-                       {$name}="{$attribute|escape}"
+                       {$name}="{if $attribute}{$attribute|escape}{/if}"
                    {/foreach}
              />
              {/if}
@@ -777,7 +777,7 @@
                                        {if $name == 'id'}
                                             {$attribute = "`$attribute`-`$option`"}
                                        {/if}
-                                       {$name}="{$attribute|escape}"
+                                       {$name}="{if $attribute}{$attribute|escape}{/if}"
                                    {/foreach}
                              />
                             {$label}
@@ -790,7 +790,7 @@
                     <label class="form__label form__label--checkbox{if isset($attributes.disabled)} form__label--muted{/if}">
                         <input type="checkbox" name="{$widget->getName()}" value="1"{if $value} checked="checked"{/if}
                             {foreach $attributes as $name => $attribute}
-                                {$name}="{$attribute|escape}"
+                                {$name}="{if $attribute}{$attribute|escape}{/if}"
                             {/foreach}
                         />
                         {$row->getDescription()}
@@ -839,7 +839,7 @@
         <select name="{$widget->getName()}{if $part !== null}[{$part}]{elseif $widget->isMultiple()}[]{/if}"
            {if $widget->isMultiple()} multiple="multiple"{/if}
            {foreach $attributes as $name => $attribute}
-               {$name}="{$attribute|escape}"
+               {$name}="{if $attribute}{$attribute|escape}{/if}"
            {/foreach}
 
            {if $value}
@@ -905,7 +905,7 @@
             <input type="file"
                    name="{$widget->getName()}{if $part !== null}[{$part}]{/if}"
                {foreach $attributes as $name => $attribute}
-                   {$name}="{$attribute|escape}"
+                   {$name}="{if $attribute}{$attribute|escape}{/if}"
                {/foreach}
              />
          </div>
@@ -947,7 +947,7 @@
             <input type="file"
                    name="{$widget->getName()}{if $part !== null}[{$part}]{/if}"
                {foreach $attributes as $name => $attribute}
-                   {$name}="{$attribute|escape}"
+                   {$name}="{if $attribute}{$attribute|escape}{/if}"
                {/foreach}
              />
          </div>
@@ -1010,7 +1010,7 @@
 
     <div
        {foreach $attributes as $name => $attribute}
-           {$name}="{$attribute|escape}"
+           {$name}="{if $attribute}{$attribute|escape}{/if}"
        {/foreach}
      >
 
