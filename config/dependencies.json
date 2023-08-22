@@ -7,7 +7,7 @@
         },
         {
             "interfaces": "ride\\library\\form\\row\\Row",
-            "class": "ride\\library\\form\\row\\AsphaltDateRow",
+            "class": "ride\\library\\form\\row\\ElectricDateRow",
             "id": "date"
         }
     ]
