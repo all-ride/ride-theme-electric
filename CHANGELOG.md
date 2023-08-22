@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [1.0.6] 2023-08-22
+### Updated
+- Fixed deprecated function call
 ## [1.0.5] 2023-06-05
 ### updated
 - Set container max width to 1400px
