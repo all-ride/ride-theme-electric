@@ -17,104 +17,104 @@
 
     {foreach $dependencies as $interface => $interfaceDependencies}
         {if $urlClass}
-    <h3><a href="{$urlClass}/{str_replace('/\\\/', '/', $interface)}">{$interface}</a></h3>
+            <h3><a href="{$urlClass}/{str_replace('/\\\/', '/', $interface)}">{$interface}</a></h3>
         {else}
-    <h3>{$interface}</h3>
+            <h3>{$interface}</h3>
         {/if}
-    <table class="table table-responsive table-striped">
-        <thead>
+        <table class="table table-responsive table-striped">
+            <thead>
             <tr>
                 <th class="grid--bp-med__2">{translate key="label.id"}</th>
                 <th class="grid--bp-med__5">{translate key="label.class"}</th>
                 <th>{translate key="label.calls"}</th>
             </tr>
-        </thead>
-        <tbody>
-        {foreach $interfaceDependencies as $dependency}
-            <tr>
-                <td>{$dependency->getId()}</td>
-                <td>
-            {if $urlClass}
-                    <a href="{$urlClass}/{str_replace('/\\\/', '/', $dependency->getClassName())}">{$dependency->getClassName()}</a>
-            {else}
-                    {$dependency->getClassName()}
-            {/if}
-                </td>
-                <td>
-            {assign var="arguments" value=$dependency->getConstructorArguments()}
-            {assign var="calls" value=$dependency->getCalls()}
-            {if $arguments || $calls}
-                    <ul class="list-unstyled">
-                {if $arguments}
-                        <li>
-                    {if $urlClass}
-                            <a href="{$urlClass}/{str_replace('/\\\/', '/', $dependency->getClassName())}#method__construct">
-                                <span class="method">__construct()</span>
-                            </a>
-                    {else}
-                            <span class="method">__construct()</span>
-                    {/if}
-                            <ul>
-                    {foreach $arguments as $argument}
-                        {assign var="properties" value=$argument->getProperties()}
-                                <li>${$argument->getName()} ({$argument->getType()})
-                        {if $properties}
-                                    <ul>
-                            {foreach $properties as $key => $value}
-                                        <li>{$key}: {$value}</li>
-                            {/foreach}
-                                    </ul>
+            </thead>
+            <tbody>
+            {foreach $interfaceDependencies as $dependency}
+                <tr>
+                    <td>{$dependency->getId()}</td>
+                    <td>
+                        {if $urlClass}
+                            <a href="{$urlClass}/{if $dependency->getClassName()}{str_replace('/\\\/', '/', $dependency->getClassName())}{/if}">{$dependency->getClassName()}</a>
+                        {else}
+                            {$dependency->getClassName()}
                         {/if}
-                                </li>
-                    {/foreach}
-                            </ul>
-                        </li>
-                {/if}
-                {foreach $calls as $call}
-                        <li>
-                    {if $urlClass}
-                            <a href="{$urlClass}/{str_replace('/\\\/', '/', $dependency->getClassName())}#method{$call->getMethodName()}">
-                                <span class="method">{$call->getMethodName()}()</span>
-                            </a>
-                    {else}
-                            <span class="method">{$call->getMethodName()}()</span>
-                    {/if}
+                    </td>
+                    <td>
+                        {assign var="arguments" value=$dependency->getConstructorArguments()}
+                        {assign var="calls" value=$dependency->getCalls()}
+                        {if $arguments || $calls}
+                            <ul class="list-unstyled">
+                                {if $arguments}
+                                    <li>
+                                        {if $urlClass}
+                                            <a href="{$urlClass}/{if $dependency->getClassName()}{str_replace('/\\\/', '/', $dependency->getClassName())}{/if}#method__construct">
+                                                <span class="method">__construct()</span>
+                                            </a>
+                                        {else}
+                                            <span class="method">__construct()</span>
+                                        {/if}
+                                        <ul>
+                                            {foreach $arguments as $argument}
+                                                {assign var="properties" value=$argument->getProperties()}
+                                                <li>${$argument->getName()} ({$argument->getType()})
+                                                    {if $properties}
+                                                        <ul>
+                                                            {foreach $properties as $key => $value}
+                                                                <li>{$key}: {$value}</li>
+                                                            {/foreach}
+                                                        </ul>
+                                                    {/if}
+                                                </li>
+                                            {/foreach}
+                                        </ul>
+                                    </li>
+                                {/if}
+                                {foreach $calls as $call}
+                                    <li>
+                                        {if $urlClass}
+                                            <a href="{$urlClass}/{if $dependency->getClassName()}{str_replace('/\\\/', '/', $dependency->getClassName())}{/if}#method{$call->getMethodName()}">
+                                                <span class="method">{$call->getMethodName()}()</span>
+                                            </a>
+                                        {else}
+                                            <span class="method">{$call->getMethodName()}()</span>
+                                        {/if}
 
-                    {assign var="arguments" value=$call->getArguments()}
-                    {if $arguments}
-                            <ul>
-                        {foreach $arguments as $argument}
-                            {assign var="properties" value=$argument->getProperties()}
-                                <li>${$argument->getName()} ({$argument->getType()})
-                            {if $properties}
-                                <ul>
-                                    {foreach $properties as $key => $value}
-                                        <li>{$key}:
-                                            {if !is_array($value)}
-                                                 {$value}
-                                            {else}
-                                                <ul>
-                                                {foreach $value as $property}
-                                                    <li>{$property}</li>
+                                        {assign var="arguments" value=$call->getArguments()}
+                                        {if $arguments}
+                                            <ul>
+                                                {foreach $arguments as $argument}
+                                                    {assign var="properties" value=$argument->getProperties()}
+                                                    <li>${$argument->getName()} ({$argument->getType()})
+                                                        {if $properties}
+                                                            <ul>
+                                                                {foreach $properties as $key => $value}
+                                                                    <li>{$key}:
+                                                                        {if !is_array($value)}
+                                                                            {$value}
+                                                                        {else}
+                                                                            <ul>
+                                                                                {foreach $value as $property}
+                                                                                    <li>{$property}</li>
+                                                                                {/foreach}
+                                                                            </ul>
+                                                                        {/if}
+                                                                    </li>
+                                                                {/foreach}
+                                                            </ul>
+                                                        {/if}
+                                                    </li>
                                                 {/foreach}
-                                                </ul>
-                                            {/if}
-                                            </li>
-                                    {/foreach}
-                                </ul>
-                            {/if}
-                                </li>
-                        {/foreach}
+                                            </ul>
+                                        {/if}
+                                    </li>
+                                {/foreach}
                             </ul>
-                    {/if}
-                        </li>
-                {/foreach}
-                    </ul>
-            {/if}
-                </td>
-            </tr>
-        {/foreach}
-        </tbody>
-    </table>
+                        {/if}
+                    </td>
+                </tr>
+            {/foreach}
+            </tbody>
+        </table>
     {/foreach}
 {/block}
