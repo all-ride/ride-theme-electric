@@ -37,7 +37,10 @@
 </div>
 <div class="gridOverview grid grid--2-col grid--bp-xsm-4-col grid--bp-sml-8-col asset-items-assets" data-order="true">
     {if $assets}
-        {$selectedAssets = explode(',', $app.request->getQueryParameter('selected'))}
+        {$selectedAssets = []}
+        {if $app.request->getQueryParameter('selected')}
+            {$selectedAssets = explode(',', $app.request->getQueryParameter('selected'))}
+        {/if}
         {foreach $assets as $item}
             <div class="grid__item order-item" data-type="{$item->getType()}" data-id="{$item->getId()}">
 
