@@ -39,7 +39,7 @@
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             {if strpos($locale, '_')}
-                {$localeTokens = explode('_', strtoupper($locale))}
+                {$localeTokens = split(strtoupper($locale), '_')}
                 {$localeTokens[0]} ({$localeTokens[1]})
             {else}
                 {strtoupper($locale)}
