@@ -39,7 +39,7 @@
     {if $assets}
         {$selectedAssets = []}
         {if $app.request->getQueryParameter('selected')}
-            {$selectedAssets = explode(',', $app.request->getQueryParameter('selected'))}
+            {$selectedAssets = split($app.request->getQueryParameter('selected'), ',')}
         {/if}
         {foreach $assets as $item}
             <div class="grid__item order-item" data-type="{$item->getType()}" data-id="{$item->getId()}">

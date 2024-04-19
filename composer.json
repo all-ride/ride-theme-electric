@@ -10,9 +10,9 @@
 
     ],
     "require": {
-        "ride/app-template-smarty": "^1.0.0",
+        "ride/app-template-smarty": "^2.0.0",
         "ride/lib-template": "^1.0.0",
-        "ride/web-template-smarty": "^1.0.0",
+        "ride/web-template-smarty": "^2.0.0",
         "ride/web-i18n-expose": "^1.0.0"
     },
     "autoload": {
